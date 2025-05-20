@@ -1,0 +1,162 @@
+/* Basic styles for the Flask App */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #444;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav span {
+    color: #ddd;
+    margin: 0 1rem;
+}
+
+main {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 960px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Flashed messages */
+.flashes {
+    list-style: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.flashes .success { /* Default category for flash() in Flask */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flashes .error { /* Custom category, if used like flash('message', 'error') */
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flashes .info { /* Custom category */
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #b8daff;
+}
+
+.flashes .warning { /* Custom category */
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+
+/* Forms */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[readonly] {
+    background-color: #eee;
+}
+
+form input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+form .error {
+    color: red;
+    font-size: 0.875em;
+}
+
+form span[style="color: red;"] { /* From previous auto-generated error spans */
+    color: red !important; /* Override inline style if necessary */
+    font-size: 0.875em;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Profile page specific */
+.profile-details p {
+    line-height: 1.6;
+}
+
+.profile-details strong {
+    margin-right: 0.5em;
+}
+
+.profile-details .bio {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+    border-left: 3px solid #ccc;
+}

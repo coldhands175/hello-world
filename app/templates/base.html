@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %} - My Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <header>
+        <h1>My Flask App</h1>
+    </header>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+      {% else %}
+      <span>Hi, {{ current_user.username }}!</span>
+      <a href="{{ url_for('view_profile', username=current_user.username) }}">Profile</a> 
+      <a href="{{ url_for('logout') }}">Logout</a>
+      {% endif %}
+    </nav>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 My Flask App</p>
+    </footer>
+  </body>
+</html>
